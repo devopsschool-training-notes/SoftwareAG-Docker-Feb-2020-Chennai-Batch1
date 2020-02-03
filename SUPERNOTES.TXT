@@ -364,12 +364,29 @@ rename
   213  history
 
 
+    4  docker stats
+    5  docker stats a1f12fd4aaea
+    6  clear
+    7  docker help run
+    8  docker run -itd -m=100000000 ubuntu
+    9  docker stats
+   10  clear
+   11  history
+
+
+LAB - 
+
+
 docker help
 Google.com
 ===================
 update	Update configuration of one or more containers
 wait	Block until one or more containers stop, then print their exit codes
 
+
+Lab 1 - You go to hub and Select your app and run it.
+
+Lab 2 - https://www.devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
 
 
 
