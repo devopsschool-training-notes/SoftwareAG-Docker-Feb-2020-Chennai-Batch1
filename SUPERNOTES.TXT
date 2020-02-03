@@ -3,6 +3,13 @@
 What is Docker?
 	Container mgmt tool.
 	Discussed...
+    Free
+    Open Source
+    Release 
+            Community Edi
+            EE ??????
+
+Why Docker?
 
 What is Container?
 	Discussed
@@ -11,27 +18,243 @@ What is Container?
 		NET
 		PMAP
 
+ 60  clear
+   61  history
+   62  clear
+   63  ps -eaf
+   64  docker ps -a
+   65  clear
+   66  docker run jenkins
+   67  docker ps -a
+   68  clear
+   69  docker run -d jenkins
+   70  docker ps
+   71  docker ps -a
+   72  ps -eaf | grep docker
+   73  docker run -d jenkins
+   74  ps -eaf | grep docker
+   75  ps -eaf | grep 10741
+   76  clear
+   77  df -kh
+   78  docker run -d jenkins
+   79  df -kh
+   80  clear
+   81  docker ps
+   82  docker exec 0ad3a2348014 df -kh
+   83  docker exec 43145a6af998 df -kh
+   84  clear
+   85  docker exec 0ad3a2348014 df -kh
+   86  docker exec 0ad3a2348014 touch /var/jenkins_home/rajesh.txt
+   87  docker exec 0ad3a2348014 ls /var/jenkins_home/rajesh.txt
+   88  docker ps
+   89  docker exec 43145a6af998 ls /var/jenkins_home/rajesh.txt
+   90  clear
+   91  docker ps
+   92  docker inspect 0ad3a2348014 | grep -i ip
+   93  docker inspect 43145a6af998 | grep -i ip
+   94  docker ps
+   95  clear
+   96  docker ps
+   97  docker exec 0ad3a2348014 ps -eaf
+   98  docker exec 43145a6af998 ps -eaf
+   99  history
+
+
 Other tools
 https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
 
 
-Step 1- Register your github account.
+How to install Docker?
+RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+13.233.147.49
+ec2-user
+https://www.devopsschool.com/tutorial/docker/install-config/
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
 
-Step 2 - Fill this form
-http://bit.ly/3b5Rolf
 
-SoftwareAG-Docker-Feb-2020-Chennai-Batch1
+    1  clear
+    2  ls
+    3  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    4  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    6  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    7  sudo yum install -y docker-ce
+    8  sudo systemctl enable docker
+    9  sudo systemctl start docker
+   10  history
+
+   =========================================
+   Components in Docker?
+        DOCKER engine
+        HUMEN ----> DOCKER CLIENT -----REST API---> DOCKER DEAMON(SERVER) --> LIBcontainer --> KERNAL
+        DOCKER Image
+                - is SORT OF PACKAGE**** which create a run time env of a container
+                - What youS see in Container --- It comes from Image.
+
+        DOCKER Registry & Repository - 
+                A Place where you can find multiple DOCKER IMAGE Repository
+                PUBLIC
+                        hub.docker.com
+                        google Registry
+                        ECR
+
+                PRIVATE
+                        Nexus
+                        Artifactory
+                        Docker Registery
+        DOCKER Container
+                The moment - you run image - 
+                                        You get one container
+                       from One image can have multiple container....
+
+VMs Lifecycle
+====================================================
+Create -> start -> pause -> unpause --> stop --> restart -> kill -> start -> remove
 
 
-GORA-SAG
-saiadi27
-zarub2k
-deepasankar
-ramesh1600
-preithig
-gopidpm@gmail.com
-vignesh1992
-Kannanva
-AdithyaBalasubramanian
-krishnan-authi-narayanan
-sureshbabu.nannibhoena
+Container Lifecycle
+====================================================
+Create -> start -> pause -> unpause --> stop --> restart -> kill -> start -> remove
+
+
+Refer
+https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
+https://en.wikibooks.org/wiki/Git/Internal_structure
+
+
+  11  clear
+   12  which docker
+   13  ps -eaf | grep dockeer
+   14  ps -eaf | grep docker
+   15  docker -v
+   16  docker help
+   17  docker info
+   18  clear
+   19  history
+
+
+Container Lifecycle
+====================================================
+Create -> start -> pause -> unpause --> stop --> restart -> kill -> start -> remove
+https://www.devopsschool.com/blog/lifecycle-of-docker-containers/
+https://www.devopsschool.com/blog/docker-pause-and-unpause-explanined/
+
+jenkins
+    JAVA
+        JRE
+            FILESYSTEM
+                        OS
+
+Docker registry Concept? [[[[RULE 1]]]]
+=================================
+DOCKER CMD CREATE|RUN|PULL
+        CHECK IMAGE IN LR /var/lib/docker/overlay2
+            IF FOUND - CREATE A Container
+            IF NOT FOUND --- DOWNLOAD FROM REGISTTY AND COPY INTO LR and CREATE
+
+
+ 20  clear
+   21  docker info
+   22  cd /var/lib/docker/overlay2
+   23  ls
+   24  clear
+   25  docker pull jenkins
+   26  clear
+   27  ls
+   28  pwd
+   29  cd
+   30  docker pull jenkins
+   31  clear
+   32  docker images
+   33  docker ps
+   34  docker ps -a
+   35  clear
+   36  docker create jenkins
+   37  docker ps -a
+   38  docker start 27d0385dfdfa
+   39  docker ps -a
+   40  docker pause 27d0385dfdfa
+   41  docker ps -a
+   42  docker unpause 27d0385dfdfa
+   43  docker ps -a
+   44  clear
+   45  docker stop 27d0385dfdfa
+   46  clear
+   47  docker ps -a
+   48  docker restart 27d0385dfdfa
+   49  docker ps -a
+   50  docker kill 27d0385dfdfa
+   51  docker ps -a
+   52  docker start 27d0385dfdfa
+   53  docker ps -a
+   54  docker rm 27d0385dfdfa
+   55  docker stop  27d0385dfdfa
+   56  docker ps -a
+   57  docker rm 27d0385dfdfa
+   58  docker ps
+   59  docker ps -a
+   60  clear
+   61  history
+
+run === RULE 1 APPLIED + create + start + BECOME
+        BUT use -d to NOT BECOME.
+
+How to use containers????
+
+
+
+
+es
+springboot
+nginx
+amqp
+mysql
+tomcat
+keylock
+httpd
+oracle
+msmsql
+ps
+rabbit
+jira
+sonarqube
+Nexus
+Artifactory
+
+1 13.233.101.37
+2 13.235.76.64
+3 13.232.30.5
+4 13.234.21.255
+5 35.154.107.155
+6 15.206.149.46
+7 13.232.251.68
+8 13.126.249.153
+9 13.233.82.27
+10 13.233.251.105
+11 13.127.80.36
+12 13.127.88.3
+13 13.233.71.90
+14 13.233.98.26
+User Name - ec2-user
+
+PEM - rajesh-mumbai.pem
+PPK - rajesh-mumbai.ppk
+https://www.devopsschool.com/notes/docker/2019/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rajesh/484119
+
+==================
+Tomo - 3 PM - 4 PM 
