@@ -199,8 +199,6 @@ DOCKER CMD CREATE|RUN|PULL
 run === RULE 1 APPLIED + create + start + BECOME
         BUT use -d to NOT BECOME.
 
-How to use containers????
-
 
 
 
@@ -241,11 +239,136 @@ PEM - rajesh-mumbai.pem
 PPK - rajesh-mumbai.ppk
 https://www.devopsschool.com/notes/docker/2019/
 
+How to use containers????
+======================================
+PID 1 is ROCK start
+PID1 is running your container.
 
 
+How to get inside a container?
+
+    EXEC WAY
+            Will execute an Executables inside a container.
+            with -it with SHELL - you can inside a container.`
+
+    ATTACH WAY
+            Will Always ATTACH to PID1
 
 
+How to come out of container without existing?
+contr + p + q
 
+
+How to access container from outside?
+    UBUNTU -> SSH
+    jenkins -> 
+
+
+  docker ps
+  101  ps -eaf | grep docker
+  102  docker exec 0ad3a2348014 ps -eaf
+  103  clear
+  104  ps -eaf | grep jenkins.sh
+  105  docker ps
+  106  docker ps -a
+  107  docker start 81eaa822417f
+  108  docker ps
+  109  c
+  110  clear
+  111  docker ps
+  112  docker exec 0ad3a2348014 ls
+  113  docker exec 0ad3a2348014 ps
+  114  clear
+  115  docker exec 0ad3a2348014 df -k
+  116  docker exec 0ad3a2348014 ffff
+  117  ffff
+  118  clear
+  119  docker ps
+  120  docker exec -it 0ad3a2348014 /bin/bash
+  121  docker ps
+  122  clear
+  123  ls
+  124  docker ps
+  125  docker attach 0ad3a2348014
+  126  clear
+  127  clear
+  128  ls
+  129  docker run ubuntu
+  130  docker ps
+  131  docker ps -a
+  132  clear
+  133  docker run -it ubuntu
+  134  docker ps
+  135  docker attach 4d9f9b036677
+  136  docker ps
+  137  docker ps -a
+  138  clear
+  139  docker ps
+  140  docker inspect 43145a6af998 | grep -i ip
+  141  ping 172.17.0.3
+  142  clear
+  143  curl http://172.17.0.3:8080
+  144  clear
+  145  docker ps -a
+  146  docker stop $(docker ps -a -q)
+  147  docker rm $(docker ps -a -q)
+  148  clear
+  149  docker ps -a
+  150  docker run -d -p 8080:8080 jenkins
+  151  docker ps
+  152  docker run -d -p 8090:8080 jenkins
+  153  docker ps
+  154  docker run -d -p 9000:8090 jenkins
+  155  clear
+  156  docker ps
+  157  history
+
+=======================================================================================
+https://www.devopsschool.com/tutorial/docker/commands/
+
+cp
+
+  173  vi devopsschool.txt
+  174  ls
+  175  more devopsschool.txt
+  176  clear
+  177  docker cp devopsschool.txt d76d73788803:/opt
+  178  docker exec d76d73788803 ls /opt/
+  179  docker exec d76d73788803 more /opt/devopsschool.txt
+  180  ls
+  181  rm -rf devopsschool.txt
+  182  docker cp d76d73788803:/opt/devopsschool.txt .
+  183  ls
+  184  more devopsschool.txt
+  185  history
+
+diff
+  191  docker ps
+  192  docker diff d76d73788803
+  193  history
+inspect
+  195  docker inspect image
+  196  docker inspect container
+
+port
+  203  docker run -d -p 9000:8090 jenkins
+  204  docker port
+  205  docker port 07135e2306b09fef193ce52e0631c0107d764d136f509de74b910c5ee6a96729
+  206  history
+rename
+  208  docker ps
+  209  docker run -itd --name dev ubuntu
+  210  docker ps
+  211  docker rename 07135e2306b0 jenkins
+  212  docker ps
+  213  history
+
+
+docker help
+Google.com
+===================
+update	Update configuration of one or more containers
+wait	Block until one or more containers stop, then print their exit codes
 
 
 
