@@ -1,0 +1,37 @@
+
+
+What is Docker?
+	Container mgmt tool.
+	Discussed...
+
+What is Container?
+	Discussed
+	USER SPACE WITH their own
+		MNT
+		NET
+		PMAP
+
+Other tools
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
+
+Step 1- Register your github account.
+
+Step 2 - Fill this form
+http://bit.ly/3b5Rolf
+
+SoftwareAG-Docker-Feb-2020-Chennai-Batch1
+
+
+https://github.com/GORA-SAG
+saiadi27
+zarub2k
+deepasankar
+ramesh1600
+preithig
+gopidpm@gmail.com
+vignesh1992
+Kannanva
+AdithyaBalasubramanian
+krishnan-authi-narayanan
+sureshbabu.nannibhoena
