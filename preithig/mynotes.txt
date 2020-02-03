@@ -1,1 +1,10 @@
 Docker training
+
+
+Docker Engine
+Docker Image
+Docker Registry
+Docker Container
+
+
+Container is NOT OS
