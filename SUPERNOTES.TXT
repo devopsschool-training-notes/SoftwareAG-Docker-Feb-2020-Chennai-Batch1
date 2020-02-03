@@ -23,7 +23,7 @@ http://bit.ly/3b5Rolf
 SoftwareAG-Docker-Feb-2020-Chennai-Batch1
 
 
-https://github.com/GORA-SAG
+GORA-SAG
 saiadi27
 zarub2k
 deepasankar
