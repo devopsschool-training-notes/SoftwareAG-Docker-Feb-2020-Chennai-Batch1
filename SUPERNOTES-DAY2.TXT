@@ -366,3 +366,99 @@ How to make containers data persistent?????
     - mount
     - tmfs
 https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+============================
+Docker networking
+=========================================
+    Types of network driver supported by Docker Default.
+    - Bridge
+            It connect 2 network.
+                NODE NETWORK++ 
+                Container network by Docker.
+                Assign a IP adddres to container.
+    - Host 
+    - None
+
+
+398  docker ps
+  399  docker ps -a
+  400  ifconfig
+  401  clear
+  402  clear
+  403  docker network
+  404  docker network ls
+  405  docker inspect 04d13cb81097
+  406  ifconfig
+  407  clear
+  408  ls
+  409  docker network ls
+  410  docker network create dev  --driver=bridge
+  411  docker network ls
+  412  docker inspect 2b1fdcddcf33
+  413  clear
+  414  ls
+  415  docker run -itd --net=dev ubuntu
+  416  docker ps
+  417  docker inspect 4e37cfc11bac
+  418  docker ps
+  419  docker network ls
+  420  docker network connect 4e37cfc11bac bridge
+  421  docker network connect bridge 4e37cfc11bac
+  422  docker inspect 4e37cfc11bac
+  423  clar
+  424  ifconfig
+  425  clear
+  426  docker ps
+  427  docker attach 4e37cfc11bac
+  428  ifconfig
+  429  docker attach 4e37cfc11bac
+  430  clear
+  431  ls
+
+https://www.devopsschool.com/notes/docker/commands-collections/docker-networking.txt
+==================
+Tutorials
+https://www.devopsschool.com/tutorial/docker/
+
+Slides
+https://www.devopsschool.com/slides/docker/index.html
+
+notes\
+
+Sample Programs
+https://github.com/devops-school
+https://github.com/orgs/devopsinstitute/dashboard
+https://github.com/orgs/devopsschool-classroom/dashboard
+https://github.com/orgs/devopsschool-lab-exercise/dashboard
+https://github.com/orgs/devopsschool-projects/dashboard
+https://github.com/orgs/devopsschool-sample-projects/dashboard
+
+Videos
+https://www.devopsschool.com/videos/
+https://www.devopsschool.com/videos/show/docker?type=video
+https://www.youtube.com/channel/UCrXr49kBvXJeQMMl2693c4g
+
+PDF
+https://www.devopsschool.com/pdf/docker/index.html
+
+blog
+https://www.devopsschool.com/blog/?s=docker
+
+QA - QUIZ
+https://www.devopsschool.com/lms/
+
+Support'
+------
+
+Dockr Compose....
+=============================
+
+How to reach out to me?
+http://rajeshkumar.xyz/
+
+Certificates - 
+http://devopscertification.co/
+http://devopscertification.co/certificates/index.html
+
+Feedback 
+https://www.google.com/search?q=devopsschool&rlz=1C1CHBF_enIN872IN872&oq=devopsschool&aqs=chrome..69i57j69i60l5j69i65l2.7324j0j7&sourceid=chrome&ie=UTF-8
