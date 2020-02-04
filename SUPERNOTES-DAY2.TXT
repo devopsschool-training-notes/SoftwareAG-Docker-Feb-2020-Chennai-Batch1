@@ -223,3 +223,64 @@ PPK - rajesh-mumbai.ppk
 https://www.devopsschool.com/notes/docker/2019/
 
 Method 2 - Automated way - using Dockerfile.
+=================================================================
+file name - Dockerfile | Anything.
+-------------------
+
+FROM ubuntu
+MAINTAINER devops@rajeshkumar rajesh RajeshKumar
+RUN apt-get update && apt-get install git -y
+
+docker build -t ub-dockerfile .
+
+==================================
+How to share these Images?
+1. Using Targ ball
+
+ 212  docker save -o ub-dockerfile.tar ub-dockerfile
+  213  ls
+  214  clear
+  215  ls
+  216  clear
+  217  ls
+  218  docker images
+  219  dcoker ps -a
+  220  docker ps -a
+  221  docker rmi ub-dockerfile
+  222  clear
+  223  dcoker  images
+  224  docker images
+  225  ls
+  226  docker load -i ub-dockerfile.tar
+  227  dcoker images
+  228  docker images
+
+
+2. Using Public registery
+    hub.docker.com
+
+Step 1- regiter it 
+step 2 - create a repository
+Step 3...............
+ 229  history
+  230  clear
+  231  docker info
+  232  clear
+  233  docker login
+  234  clear
+  235  docker images
+  236  docker push ub-dockerfile
+  237  docker tag ub-dockerfile scmgalaxy/softwareagggg
+  238  clear
+  239  docker imagtes
+  240  docker images
+  241  clear
+  242  docker push ATED             SIZE
+  243  ub-dockerfile             latest              7feecad9686b        9 minutes ago       186MB
+  244  scmgalaxy/softwareagggg   latest              7feecad9686b        9 minutes ago       186MB
+  245  docker images
+  246  docker push scmgalaxy/softwareagggg
+  247  history
+
+3. Using Private registery
+    Nexus
