@@ -1,1 +1,2 @@
 commit
+docker pull adithyabalasubramanian/ubuntu_icdiff:latest
