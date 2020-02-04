@@ -204,6 +204,22 @@ Method 1 - Lazy - Using Container.
   193  clear
   194  history
 
+1 52.66.103.52
+2 13.232.188.70
+3 13.232.76.48
+4 13.233.127.133
+5 13.233.107.158
+6 3.6.89.175
+7 13.235.16.42
+8 35.154.113.217
+9 3.6.93.36
+10 13.232.69.13
+11 15.206.153.55
+12 52.66.107.86
+13 3.6.90.145
 
+PEM - rajesh-mumbai.pem
+PPK - rajesh-mumbai.ppk
+https://www.devopsschool.com/notes/docker/2019/
 
 Method 2 - Automated way - using Dockerfile.
