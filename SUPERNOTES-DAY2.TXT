@@ -1,0 +1,209 @@
+13.233.167.174
+ec2-user
+
+
+ 1  clear
+    2  ls
+    3  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    4  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    6  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    7  sudo yum install -y docker-ce
+    8  sudo systemctl enable docker
+    9  sudo systemctl start docker
+   10  clear
+   11  ps -eaf | grep docker
+   12  clear
+   13  ls
+   14  docker info
+   15  clear
+   16  cd /var/lib/docker
+   17  ls
+   18  cd overlay2
+   19  ls
+   20  du -sh
+   21  docker pull ubuntu
+   22  clear
+   23  ls
+   24  docker inspect ubuntu
+   25  clear
+   26  ls
+   27  docker history
+   28  docker history ubuntu
+   29  clear
+   30  ls
+   31  du -sh
+   32  du -m --max-depth=1
+   33  cd ./e341a96de0fe8738c446354e973c4acaf10eebcc76077e25bebff9717c83d424
+   34  clear
+   35  ls
+   36  cd diff/
+   37  ls
+   38  tree
+   39  yum install tree -y
+   40  c
+   41  clear
+   42  tree
+   43  tree --max-depth=2
+   44  tree -L 2
+   45  tree -L 1
+   46  clear
+   47  ls
+   48  cd
+   49  ls
+   50  cd -
+   51  ls
+   52  cd /var/lib/docker/overlay2/
+   53  ls
+   54  du -m --max-depth=1
+   55  cd ./fd38c0038029ca3b28ec9527d8f1c6a6612e3a15762d246869e15e556be0988a
+   56  clear
+   57  ls
+   58  cd diff/
+   59  ls
+   60  tree
+   61  cd ..
+   62  ls
+   63  cd work/
+   64  clear
+   65  ls
+   66  cd ..
+   67  ls
+   68  cd ..
+   69  ls
+   70  cd ..
+   71  ls
+   72  clear
+   73  ls
+   74  pwd
+   75  df -kh
+   76  ps -eaf | grep docker
+   77  clear
+   78  ifconfig
+   79  clear
+   80  docker run -itd ubuntu
+   81  ifconfig
+   82  clear
+   83  ps -eaf | grep docker
+   84  df -kh
+   85  ls
+   86  cd overlay2
+   87  ls
+   88  clear
+   89  ls
+   90  cd 1b36f2682f9d6c742a8e3440158a44e81c308d466a94228de16d233b557f2ef3
+   91  ls
+   92  cd merged
+   93  ls
+   94  clear
+   95  cd ..
+   96  ls
+   97  cd ..
+   98  ls
+   99  cd ..
+  100  ls
+  101  cd containers
+  102  ls
+  103  docker ps
+  104  clear
+  105  docker ps
+  106  docker exec 61db17a7eba5 touch /opt/rajesh.txt
+  107  cd ..
+  108  ls
+  109  find . -name rajesh.txt
+  110  docker ps
+  111  docker stop 61db17a7eba5
+  112  docker ps -a
+  113  ifconfig
+  114  df -kh
+  115  ps -eaf | grep docker
+  116  ls
+  117  find . -name rajesh.txt
+  118  docker start 61db17a7eba5
+  119  ifconfig
+  120  ps -eaf | grep docker
+  121  df -kh
+  122  find . -name rajesh.txt
+  123  docker stop 61db17a7eba5
+  124  docker rm 61db17a7eba5
+  125  find . -name rajesh.txt
+  126  cd containers/
+  127  ls
+  128  history
+
+How to create Images?
+===================================
+EVERY LAYER HAS THEIR PARENTS...
+
+Method 1 - Lazy - Using Container.
+
+ 129  clear
+  130  clear
+  131  docker run -d ubuntu
+  132  docker run -d ubuntu
+  133  df -kh
+  134  docker ps
+  135  docker run -it d ubuntu
+  136  clear
+  137  docker run -itd ubuntu
+  138  docker run -itd ubuntu
+  139  docker ps
+  140  df -kh
+  141  clear
+  142  clear
+  143  docker ps
+  144  docker exec fb5de8b98b88 git
+  145  docker attach fb5de8b98b88
+  146  docker ps
+  147  docker exec fb5de8b98b88 git
+  148  clear
+  149  ls
+  150  docker ps
+  151  docker history ubuntu
+  152  clear
+  153  docker
+  154  clear
+  155  docker ps
+  156  docker commit -a"RajeshKumar" -m"ub-up-git-demo" fb5de8b98b88 ub-up-git-demo
+  157  clear
+  158  docker images
+  159  history history ubuntu
+  160  docker history ubuntu
+  161  docker history ub-up-git-demo
+  162  docker inspect ccc6e87d482b
+  163  docker images
+  164  docker inspect ub-up-git-demo
+  165  docker inspect ubuntu
+  166  cd ..
+  167  ls
+  168  cd overlay2/
+  169  ls
+  170  cd 87723443578f65502d5958f5e5005b98881d9da051f3ac7f0cbece9b2ba73059
+  171  clear
+  172  docker ps -a
+  173  docker stop fb5de8b98b88 afec83953375 5a041d46e37c f5903cdeee72
+  174  clear
+  175  docker rm fb5de8b98b88 afec83953375 5a041d46e37c f5903cdeee72
+  176  clear
+  177  docker ps -a
+  178  docker images
+  179  ls
+  180  du -m --max-depth=1
+  181  cd 4e228c48cac47ff463bc6a946eb8f348a0ff6b29b7f754158b8c3da74e84ba2c
+  182  clear
+  183  ls
+  184  cd diff
+  185  ls
+  186  cd bin
+  187  ls
+  188  cd ..
+  189  ls
+  190  cd usr/
+  191  ls
+  192  find . -name git
+  193  clear
+  194  history
+
+
+
+Method 2 - Automated way - using Dockerfile.
