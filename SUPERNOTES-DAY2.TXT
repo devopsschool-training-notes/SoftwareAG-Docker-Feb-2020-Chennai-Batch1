@@ -284,3 +284,85 @@ Step 3...............
 
 3. Using Private registery
     Nexus
+=================================
+jenkins
+    openjdk:8-jdk
+            buildpack-deps:stretch-scm  
+                    buildpack-deps:stretch-curl
+                            debian:stretch          -- ROOT FS
+                                    scratch
+                                    =
+
+FROM ubuntu
+MAINTAINER devops@rajeshkumar rajesh RajeshKumar
+RUN touch /opt/rajesh1.txt
+RUN touch /opt/rajesh2.txt
+RUN touch /opt/rajesh3.txt
+
+ 251  docker history ub-up-git-demo
+  252  docker tag ccc6e87d482b fdsfsfsd
+  253  docker images
+  254  clear
+  255  docker run -d jenkins
+  256  docker run -d jenkins
+  257  clear
+  258  ls
+  259  docker ps
+  260  docker exec d751e60104b5 env
+  261  clear
+  262  docker ps
+  263  docker exec -it d751e60104b5 /bin/bash
+  264  clear
+  265  clear
+  266  ls
+  267  vi doc1
+  268  docker build -t doc1 -f doc1 .
+  269  history
+  270  docker images
+  271  docker history doc1
+
+
+======================================
+How to run container????
+
+Method of Executions
+    -------------
+SHELL MODE
+ls
+echo
+echo rrr rrrr rr
+
+
+EXEC MODE
+/bin/ls
+/bin/echo
+/bin/echo rrr
+
+TO MAKE PID 1
+==========================
+CMD
+        CMD CAN BE CHANGED DURING RUN TIME.
+
+ENTRYPOINT
+    ENTRYPOINT CAN NOT BE REPLACED
+    plus
+    CMD passwed to ENTRYPOINT is accepted as parameters
+
+ENTRYPOINT
+//bin/echo fff
+
+docker run image fff
+
+Lab - 
+
+=================================================
+https://www.devopsschool.com/tutorial/docker/dockerfile/dockerfile-example-sample-lab.html
+
+===================================================
+Docker Volume?
+======================
+How to make containers data persistent?????
+    - Volume        /var/lib/docker/volumes
+    - mount
+    - tmfs
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
