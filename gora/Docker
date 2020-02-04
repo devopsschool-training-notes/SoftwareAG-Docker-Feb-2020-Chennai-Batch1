@@ -1,1 +1,3 @@
-Hai hello welcome
+Ubuntu Docker file with Git and Java installed:
+================================================
+docker pull gorav3/ub_git_java
